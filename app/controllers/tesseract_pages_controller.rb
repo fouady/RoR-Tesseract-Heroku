@@ -7,7 +7,7 @@ class TesseractPagesController < ApplicationController
     File.open("testing.jpg",'wb') do |f|
   		f.write jpg
 	end
-	str = %x(ls ~)
+	str = %x(which tesseract)
    	render text: str
   end
 end
