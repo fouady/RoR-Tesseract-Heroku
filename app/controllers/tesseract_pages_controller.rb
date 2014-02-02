@@ -7,7 +7,8 @@ class TesseractPagesController < ApplicationController
     File.open("ocr/sample.jpg",'wb') do |f|
   		f.write jpg
 	end
-	str = %x(./ocr/bin/tesseract ocr/sample.jpg ocr/out)
+	%x(./ocr/bin/tesseract ocr/sample.jpg ocr/out)
+  str = %x(dir ocr/out*)
    	render text: str
   end
 end
