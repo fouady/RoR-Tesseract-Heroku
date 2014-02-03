@@ -4,8 +4,9 @@ class TesseractPagesController < ApplicationController
 
   	puts "In Run Controller"
 
-    jpg = Base64.decode64(params[:image])
+    jpg = Base64.decode64(params[:image]);
     
+    puts "Opening sample file"
     file = File.open("tessdir/sample.jpg",'wb')
   	file.write jpg
 	  
