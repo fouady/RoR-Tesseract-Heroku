@@ -1,4 +1,4 @@
-prefix=/home/fouady/Desktop/ocr
+prefix=/app/ocr
 exec_prefix=${prefix}
 bindir=${exec_prefix}/bin
 datarootdir = ${prefix}/share
@@ -11,5 +11,5 @@ Description: An OCR Engine that was developed at HP Labs between 1985 and 1995..
 URL: https://code.google.com/p/tesseract-ocr
 Version: 3.02.02
 # Requires: lept  ## leptonica do not provide lept.pc
-Libs: -L${libdir} -ltesseract  -L/home/fouady/Desktop/ocr/lib -llept -lpthread 
-Cflags: -I${includedir} -g -O2  -I/home/fouady/Desktop/ocr/include/leptonica -g -O2 -DHAVE_CONFIG_H
+Libs: -L${libdir} -ltesseract  -L/app/ocr/lib -llept -lpthread 
+Cflags: -I${includedir} -g -O2  -I/app/ocr/include/leptonica -g -O2 -DHAVE_CONFIG_H
