@@ -6,18 +6,22 @@ class TesseractPagesController < ApplicationController
 
     jpg = Base64.decode64(params[:image]);
     
-    puts "Opening sample file"
+    puts "Creating directory"
+    %x(mkdir tessdir)
+
+    puts "Saving image"
     file = File.open("tessdir/sample.jpg",'wb')
   	file.write jpg
 	  
     puts "Starting tesseract"
     %x(tesseract tessdir/sample.jpg tessdir/out)
-    puts "Done with tesseract"
-  
+    
+    puts "Reading result"
     file = File.open("tessdir/out.txt", "rb")
     contents = file.read
     
-    %x(rm -Rf tessdir/*)
+    puts "removing tessdir"
+    %x(rm -Rf tessdir)
     
     render text: contents
   end
