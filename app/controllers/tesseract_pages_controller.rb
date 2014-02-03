@@ -9,7 +9,9 @@ class TesseractPagesController < ApplicationController
     file = File.open("tmp/tessdir/sample.jpg",'wb')
   	file.write jpg
 	  
+    puts "Starting tesseract"
     %x(tesseract tmp/tessdir/sample.jpg tmp/tessdir/out)
+    puts "Done with tesseract"
   
     file = File.open("tmp/tessdir/out.txt", "rb")
     contents = file.read
