@@ -10,5 +10,6 @@ class TesseractPagesController < ApplicationController
 	#str = %x(./ocr/bin/tesseract ocr/sample.jpg ocr/out)
   str = %x(tesseract --version)
    	render text: "Done"
+    
   end
 end
