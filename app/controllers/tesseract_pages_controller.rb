@@ -8,7 +8,9 @@ class TesseractPagesController < ApplicationController
   		f.write jpg
 	end
 	#str = %x(./ocr/bin/tesseract ocr/sample.jpg ocr/out)
-  str = %x(./ocr/bin/tesseract --version)
+  #str = %x(./ocr/bin/tesseract --version)
+  %x(mkdir test123)
+  str = %x(dir test1*)
    	render text: str
   end
 end
