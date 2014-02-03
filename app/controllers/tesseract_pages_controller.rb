@@ -4,13 +4,11 @@ class TesseractPagesController < ApplicationController
   	puts "In Run Controller"
     puts params[:image]
     jpg = Base64.decode64(params[:image])
-    #File.open("ocr/sample.jpg",'wb') do |f|
-  	#	f.write jpg
-	  #end
+    File.open("tmp/sample.jpg",'wb') do |f|
+  		f.write jpg
+	  end
 	#str = %x(./ocr/bin/tesseract ocr/sample.jpg ocr/out)
-  #str = %x(./ocr/bin/tesseract --version)
-  %x(mkdir test123)
-  str = %x(ls)
+  str = %x(tesseract --version)
    	render text: str
   end
 end
